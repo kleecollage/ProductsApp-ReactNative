@@ -4,7 +4,6 @@ import { LoginScreen } from '../screens/auth/LoginScreen';
 import { RegisterScreen } from '../screens/auth/RegisterScreen';
 import { LoadingScreen } from '../screens/loading/LoadingScreen';
 import { ProductScreen } from '../screens/product/ProductScreen';
-import { API_URL, STAGE } from '@env';
 
 export type RootStackParams = {
   HomeScreen: undefined;
