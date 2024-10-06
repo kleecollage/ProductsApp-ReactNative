@@ -1,7 +1,7 @@
 import { useRef } from 'react';
 import { Formik } from 'formik';
 import { StackScreenProps } from '@react-navigation/stack';
-import { Button, ButtonGroup, Input, Layout, useTheme } from '@ui-kitten/components'
+import { Button, ButtonGroup, Input, Layout, Text, useTheme } from '@ui-kitten/components'
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query'
 import { MainLayout } from '../../layouts/MainLayout'
 import { RootStackParams } from '../../navigation/StackNavigator';
@@ -56,10 +56,10 @@ export const ProductScreen = ( { route }: Props) => {
           title={values.title}
           subtitle={`Precio: ${values.price} USD`}
           rightAction={ async() => {
-            const photos = await CameraAdapter.takePicture();
+            const photos = await CameraAdapter.getPicturesFromLibrary();
             setFieldValue('images', [...values.images, ...photos])
           }}
-          rightActionIcon='camera-outline'
+          rightActionIcon='image-outline'
         >
           <ScrollView>
             {/* IMAGENES DEL PRODUCTO */}
